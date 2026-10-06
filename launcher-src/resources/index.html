@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>esp launcher</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="titlebar">
+    <div id="drag" class="drag">
+      <span class="wordmark">esp</span>
+      <span class="titlebar-sub">launcher <span id="launcher-version">1.0.0</span></span>
+    </div>
+    <div class="window-buttons">
+      <button id="btn-min" class="wbtn" title="Minimize" aria-label="Minimize">
+        <svg viewBox="0 0 12 12"><path d="M2 6.5h8"/></svg>
+      </button>
+      <button id="btn-close" class="wbtn wbtn-close" title="Close" aria-label="Close">
+        <svg viewBox="0 0 12 12"><path d="M2.5 2.5l7 7M9.5 2.5l-7 7"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="shell">
+    <nav class="rail">
+      <button class="nav-item active" data-view="play"><span class="nav-key">1</span>Play</button>
+      <button class="nav-item" data-view="mods"><span class="nav-key">2</span>Files</button>
+      <button class="nav-item" data-view="settings"><span class="nav-key">3</span>Settings</button>
+      <button class="nav-item" data-view="about"><span class="nav-key">4</span>About</button>
+
+      <div class="rail-foot">
+        <div class="check" id="check-mc"><i></i><span>.minecraft</span></div>
+        <div class="check" id="check-net"><i></i><span>update server</span></div>
+        <div class="check" id="check-launcher"><i></i><span>MC launcher</span></div>
+      </div>
+    </nav>
+
+    <main class="views">
+      <!-- PLAY -->
+      <section class="view active" id="view-play">
+        <div class="banner">
+          <img src="/img/combat.jpg" alt="esp in game: KillAura on a witch with the target card and ESP boxes">
+          <div class="banner-copy">
+            <span class="sticker" id="sticker-version">v1.0.0</span>
+            <h1>esp <span class="h1-for">for</span> <span id="mc-version">1.21.11</span></h1>
+            <p id="tagline">Fabric client. Right shift opens the menu.</p>
+          </div>
+        </div>
+
+        <div class="split">
+          <div class="card news">
+            <div class="card-head"><h2>What changed</h2><span class="mono dim" id="news-source">from github</span></div>
+            <ol id="news" class="news-list">
+              <li class="dim">Loading…</li>
+            </ol>
+          </div>
+          <div class="card install">
+            <div class="card-head"><h2>Install</h2><span class="mono dim" id="install-state">checking</span></div>
+            <ul id="steps" class="steps"></ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- FILES -->
+      <section class="view" id="view-mods">
+        <div class="page-head">
+          <h2>Files</h2>
+          <p class="dim">Everything the launcher puts on your PC. esp comes from the GitHub repo, Fabric bits come straight from FabricMC.</p>
+        </div>
+        <table class="files">
+          <thead><tr><th>File</th><th>From</th><th>Size</th><th>SHA-256</th><th></th></tr></thead>
+          <tbody id="files"></tbody>
+        </table>
+        <div class="row-buttons">
+          <button class="btn" id="open-mods">Open mods folder</button>
+          <button class="btn" id="open-gamedir">Open game folder</button>
+        </div>
+      </section>
+
+      <!-- SETTINGS -->
+      <section class="view" id="view-settings">
+        <div class="page-head">
+          <h2>Settings</h2>
+          <p class="dim">Saved on this PC only.</p>
+        </div>
+        <div class="form">
+          <label class="field">
+            <span class="field-label">Memory <b id="ram-label">4 GB</b></span>
+            <input type="range" id="ram" min="2" max="16" step="1" value="4">
+            <span class="field-hint">How much RAM Minecraft gets. 4 GB is plenty unless you run shaders.</span>
+          </label>
+          <label class="field">
+            <span class="field-label">Game folder</span>
+            <div class="inline">
+              <input type="text" id="gamedir" spellcheck="false">
+              <button class="btn small" id="reset-gamedir">Default</button>
+            </div>
+            <span class="field-hint">Kept apart from your normal .minecraft so your other mods don't clash.</span>
+          </label>
+          <label class="field">
+            <span class="field-label">Extra JVM arguments</span>
+            <input type="text" id="jvm" spellcheck="false" placeholder="-XX:+UseG1GC">
+          </label>
+          <label class="toggle-row">
+            <input type="checkbox" id="close-after">
+            <span>Close this launcher after the Minecraft Launcher opens</span>
+          </label>
+          <div class="row-buttons">
+            <button class="btn" id="repair">Repair install</button>
+            <button class="btn" id="open-log">Open latest.log</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="view" id="view-about">
+        <div class="page-head">
+          <h2>About</h2>
+        </div>
+        <div class="about">
+          <p>This launcher doesn't sign you in or run Minecraft by itself. It sets up an <b>esp</b> profile in the official Minecraft Launcher, keeps the files up to date, then opens that launcher for you. Your Microsoft login never touches it.</p>
+          <p>What it does when you press Play:</p>
+          <ol class="plain">
+            <li>Grabs <span class="mono">manifest.json</span> from the esp GitHub repo.</li>
+            <li>Installs the Fabric loader version entry into <span class="mono">.minecraft/versions</span>.</li>
+            <li>Downloads esp and Fabric API into the esp game folder, checking each file's SHA-256.</li>
+            <li>Adds or updates the <b>esp</b> profile in <span class="mono">launcher_profiles.json</span>.</li>
+            <li>Opens the Minecraft Launcher. Pick the esp profile and hit Play there.</li>
+          </ol>
+          <p class="dim small">Not affiliated with Mojang or Microsoft. Using clients like this on servers can get you banned.</p>
+          <div class="row-buttons">
+            <button class="btn" id="open-repo">GitHub repo</button>
+            <button class="btn" id="open-site">Website</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="playbar">
+    <div class="status">
+      <div class="status-line"><span id="status-text">Starting up</span><span id="status-detail" class="mono dim"></span></div>
+      <div class="bar"><div id="bar-fill"></div></div>
+    </div>
+    <div class="chips">
+      <span class="chip mono" id="chip-loader">fabric —</span>
+      <span class="chip mono" id="chip-ram">4 GB</span>
+    </div>
+    <button id="play" class="play" disabled>
+      <span id="play-label">Play</span>
+    </button>
+  </footer>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="/js/neutralino.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

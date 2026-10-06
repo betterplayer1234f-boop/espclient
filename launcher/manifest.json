@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "name": "esp",
+  "version": "1.0.0",
+  "minecraft": "1.21.11",
+  "loader": "0.19.5",
+  "java": 21,
+  "tagline": "Fabric client. Right shift opens the menu, KillAura sits on R.",
+  "launcher": {
+    "version": "1.0.0",
+    "url": "https://raw.githubusercontent.com/betterplayer1234f-boop/espclient/main/launcher/esp-launcher.exe"
+  },
+  "mods": [
+    {
+      "id": "esp",
+      "name": "esp",
+      "version": "1.0.0",
+      "file": "esp-1.0.0.jar",
+      "source": "this repo",
+      "url": "https://raw.githubusercontent.com/betterplayer1234f-boop/espclient/main/launcher/mods/esp-1.0.0.jar",
+      "size": 1026713,
+      "sha256": "a0cc205b4f00539e08bbb227d5d2e3bd720870c57b6890ba344d89e3aec039a3",
+      "cleanupPrefix": "esp-"
+    },
+    {
+      "id": "fabric-api",
+      "name": "Fabric API",
+      "version": "0.141.6+1.21.11",
+      "file": "fabric-api-0.141.6+1.21.11.jar",
+      "source": "maven.fabricmc.net",
+      "url": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/0.141.6+1.21.11/fabric-api-0.141.6+1.21.11.jar",
+      "size": 2426039,
+      "sha256": "bdff7fd7e220085cfad2ff9b1f40dde6534ae0b96cf378f97a374bc54cb9ed0f",
+      "cleanupPrefix": "fabric-api-"
+    }
+  ],
+  "news": [
+    {
+      "date": "2026-10-06",
+      "title": "1.0.0 is out",
+      "body": "First release. Web ClickGUI over Chromium with a native fallback, 41 modules, 11 block animations."
+    },
+    {
+      "date": "2026-10-06",
+      "title": "Launcher",
+      "body": "Sets up an esp profile in the Minecraft Launcher and keeps the jars up to date. No logins pass through it."
+    },
+    {
+      "date": "2026-10-05",
+      "title": "Heads up",
+      "body": "The first time you open the menu, Chromium downloads in the background (~100 MB). The native menu works until then."
+    }
+  ]
+}

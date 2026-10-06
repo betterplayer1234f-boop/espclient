@@ -1,0 +1,13 @@
+{
+  "name": "esp-launcher",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "neu run",
+    "build": "neu build --release --embed-resources && rcedit dist/esp-launcher/esp-launcher-win_x64.exe --set-icon icon.ico"
+  },
+  "devDependencies": {
+    "@neutralinojs/neu": "^11.7.2",
+    "rcedit": "^5.0.2"
+  }
+}

@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>esp: a pink little Fabric client for 1.21.11</title>
+  <meta name="description" content="esp is a Fabric client for Minecraft 1.21.11 with a Chromium-powered ClickGUI, 41 modules and old-school sword block animations.">
+  <link rel="icon" href="img/icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <a class="logo" href="#">esp</a>
+  <nav>
+    <a href="#modules">Modules</a>
+    <a href="#launcher">Launcher</a>
+    <a href="#changes">Changelog</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <a class="gh" href="https://github.com/betterplayer1234f-boop/espclient">GitHub ↗</a>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="meta">v1.0.0 · minecraft 1.21.11 · fabric 0.19.5</p>
+      <h1>a <mark>pink</mark> little<br>fabric client.</h1>
+      <p class="lede">
+        esp runs on Minecraft 1.21.11. The menu is a real web page drawn by Chromium inside the game.
+        It has 41 modules, and the sword blocking looks the way it did in 2014.
+      </p>
+      <div class="cta">
+        <a class="btn btn-pink" href="https://github.com/betterplayer1234f-boop/espclient/raw/main/launcher/esp-launcher.exe">Download the launcher</a>
+        <a class="btn" href="https://github.com/betterplayer1234f-boop/espclient/raw/main/launcher/mods/esp-1.0.0.jar">or just the .jar</a>
+      </div>
+      <p class="fine">Launcher is Windows only, 4.3 MB. You still need the official Minecraft Launcher, since esp's launcher sets things up and hands off to it.</p>
+    </div>
+
+    <div class="hero-shots">
+      <figure class="shot shot-a">
+        <span class="tape"></span>
+        <img src="img/clickgui.jpg" alt="The esp ClickGUI open in game, KillAura and Animations settings expanded" width="1600" height="900">
+      </figure>
+      <figure class="shot shot-b">
+        <span class="tape tape-b"></span>
+        <img src="img/combat.jpg" alt="KillAura fighting a vindicator with the target card, 2D ESP boxes and nametags" width="1600" height="900">
+      </figure>
+      <span class="note">actual screenshots,<br>taken at 1600×900</span>
+    </div>
+  </section>
+
+  <section class="facts">
+    <div><b>41</b><span>modules</span></div>
+    <div><b>11</b><span>block animations</span></div>
+    <div><b>2</b><span>click GUIs, web and native</span></div>
+    <div><b>0</b><span>logins through the launcher</span></div>
+  </section>
+
+  <section id="modules" class="block">
+    <div class="block-head">
+      <h2>What's in it</h2>
+      <p>Every module, grouped how the menu groups them. Each one has its own settings, bind and hide toggle.</p>
+    </div>
+    <div class="cats">
+      <div class="cat c-pink">
+        <h3>Combat <small>8</small></h3>
+        <ul>
+          <li><b>KillAura</b> single / switch / multi, smoothed silent aim</li>
+          <li><b>Velocity</b> cancel, scale, or jump-reset knockback</li>
+          <li><b>Criticals</b> jump or packet</li>
+          <li><b>AutoClicker</b> gaussian CPS, left and right</li>
+          <li><b>AimAssist</b> per-frame pull, FOV cone</li>
+          <li><b>TriggerBot</b></li>
+          <li><b>AntiBot</b> tab list, names, duplicates</li>
+          <li><b>AutoArmor</b></li>
+        </ul>
+      </div>
+      <div class="cat c-blue">
+        <h3>Movement <small>8</small></h3>
+        <ul>
+          <li><b>Sprint</b> legit / omni</li>
+          <li><b>Speed</b> vanilla, strafe hop, low hop</li>
+          <li><b>Fly</b> motion, creative, glide</li>
+          <li><b>NoSlow</b> per item type</li>
+          <li><b>Step</b></li>
+          <li><b>Strafe</b> air control</li>
+          <li><b>SafeWalk</b></li>
+          <li><b>InventoryMove</b></li>
+        </ul>
+      </div>
+      <div class="cat c-butter">
+        <h3>Player <small>6</small></h3>
+        <ul>
+          <li><b>NoFall</b></li>
+          <li><b>FastPlace</b></li>
+          <li><b>AutoTool</b> switches back after</li>
+          <li><b>ChestStealer</b> random order, auto close</li>
+          <li><b>InvManager</b> sorts weapon, drops junk</li>
+          <li><b>Blink</b> with a ghost of where the server thinks you are</li>
+        </ul>
+      </div>
+      <div class="cat c-pink">
+        <h3>Render <small>10</small></h3>
+        <ul>
+          <li><b>ESP</b> 2D corners, 3D box or glow outline</li>
+          <li><b>Tracers</b> lines or arrows</li>
+          <li><b>Nametags</b> health, distance, armor</li>
+          <li><b>ChestESP</b></li>
+          <li><b>TargetESP</b> ring, orbit, marker</li>
+          <li><b>Animations</b> see below</li>
+          <li><b>Fullbright</b></li>
+          <li><b>NoHurtCam</b></li>
+          <li><b>Breadcrumbs</b></li>
+          <li><b>JumpCircles</b></li>
+        </ul>
+      </div>
+      <div class="cat c-blue">
+        <h3>World <small>3</small></h3>
+        <ul>
+          <li><b>Scaffold</b> expand, same Y, tower, block counter</li>
+          <li><b>Timer</b></li>
+          <li><b>FastBreak</b></li>
+        </ul>
+      </div>
+      <div class="cat c-butter">
+        <h3>Misc + Client <small>6</small></h3>
+        <ul>
+          <li><b>NameProtect</b></li>
+          <li><b>MiddleClickFriend</b></li>
+          <li><b>AutoGG</b></li>
+          <li><b>ClickGUI</b> web or native</li>
+          <li><b>HUD</b> watermark, array list, target card</li>
+          <li><b>Theme</b> 4 presets or your own colors</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block split">
+    <figure class="shot flat">
+      <img src="img/native-gui.jpg" alt="The native ClickGUI drawn by the game's own renderer" width="1500" height="844" loading="lazy">
+    </figure>
+    <div>
+      <h2>The menu is a web page</h2>
+      <p>
+        Right shift opens it. It's HTML, CSS and JavaScript rendered by Chromium (through MCEF) straight onto a game texture,
+        which is how it gets real springy animations, a proper color picker and smooth fonts.
+      </p>
+      <ul class="ticks">
+        <li>Drag panels around. They snap to a 20 px grid, and holding shift skips the snap.</li>
+        <li>Start typing anywhere to search. Enter toggles the first hit.</li>
+        <li>Right click a module for its settings, middle click to bind it.</li>
+        <li>Configs save on their own a second after you change anything.</li>
+      </ul>
+      <p class="aside">
+        Chromium is about 100 MB and downloads in the background the first time you play. Until it's there,
+        you get the native menu in the screenshot. Same layout, drawn with the game's own renderer.
+      </p>
+    </div>
+  </section>
+
+  <section class="block split reverse">
+    <div>
+      <h2>Aim that doesn't snap</h2>
+      <p>KillAura and Scaffold never move your camera. They send a separate rotation to the server, and that rotation has some rules:</p>
+      <ol class="steps">
+        <li><span>01</span>It speeds up and slows down instead of jumping straight to the target. You set the turn speed range and acceleration.</li>
+        <li><span>02</span>Every step is rounded to what your mouse sensitivity could actually produce.</li>
+        <li><span>03</span>Movement gets corrected so you still walk where your camera faces, even when the server yaw points elsewhere.</li>
+        <li><span>04</span>Hits only go out when the rotation that was really sent lines up with the target.</li>
+      </ol>
+      <p class="aside">In third person your head follows that rotation, so you can see what the server sees.</p>
+    </div>
+    <figure class="shot flat tilt-r">
+      <img src="img/targetesp.jpg" alt="TargetESP ring around a pillager while KillAura is attacking" width="1600" height="900" loading="lazy">
+    </figure>
+  </section>
+
+  <section class="block anims">
+    <h2>Block animations</h2>
+    <p>Hold right click with a sword, or let KillAura auto block. Pick a style, then nudge X / Y / Z / scale until it sits right.</p>
+    <div class="chips">
+      <span>1.8</span><span>1.7</span><span class="on">Exhibition</span><span>Swank</span><span>Swing</span><span>Sigma</span>
+      <span>Push</span><span>Stab</span><span>Slide</span><span>Spin</span><span>Tap</span>
+    </div>
+    <p class="aside">There's also an old-style swing for every item, a swing speed slider, and an option to skip the re-equip dip.</p>
+  </section>
+
+  <section id="launcher" class="block launcher">
+    <div class="launcher-copy">
+      <h2>The launcher</h2>
+      <p>It doesn't replace the Minecraft Launcher. It gets everything ready and then opens it.</p>
+      <ol class="steps">
+        <li><span>01</span>Reads <code>manifest.json</code> from the GitHub repo to see what's current.</li>
+        <li><span>02</span>Installs the Fabric loader entry into <code>.minecraft/versions</code>.</li>
+        <li><span>03</span>Downloads esp and Fabric API into its own folder (<code>%appdata%\.esp</code>) and checks each SHA-256.</li>
+        <li><span>04</span>Adds an <b>esp</b> profile next to your others, after backing up the profiles file once.</li>
+        <li><span>05</span>Opens the Minecraft Launcher. Pick esp, press Play.</li>
+      </ol>
+      <a class="btn btn-pink" href="https://github.com/betterplayer1234f-boop/espclient/raw/main/launcher/esp-launcher.exe">Download esp-launcher.exe</a>
+      <p class="fine">Windows 10 / 11. Uses the WebView2 runtime that already ships with Windows.</p>
+    </div>
+    <figure class="shot shot-window">
+      <span class="tape"></span>
+      <img src="img/launcher-play.png" alt="The esp launcher with all install steps ticked and the Play button" width="980" height="620" loading="lazy">
+    </figure>
+  </section>
+
+  <section id="changes" class="block">
+    <h2>Changelog</h2>
+    <div class="log">
+      <article>
+        <time>2026-10-06</time>
+        <div>
+          <h3>1.0.0</h3>
+          <ul>
+            <li>First public build.</li>
+            <li>Launcher: installs Fabric, keeps jars current, adds the esp profile.</li>
+            <li>Web menu sizes itself off the window instead of the GUI scale, so it's no longer huge on 1080p.</li>
+            <li>Smaller nametags up close. Default block pose sits a bit lower.</li>
+          </ul>
+        </div>
+      </article>
+      <article>
+        <time>2026-10-05</time>
+        <div>
+          <h3>pre-release</h3>
+          <ul>
+            <li>Fixed the open key also closing the menu on the same press.</li>
+            <li>Fixed a crash from blurring the background twice in one frame.</li>
+            <li>Chromium no longer double-applies Windows display scaling.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="faq" class="block faq">
+    <h2>Questions people actually ask</h2>
+    <details open>
+      <summary>Will I get banned?</summary>
+      <p>On servers with an anticheat, if you turn on combat or movement modules and play like a bot, yes, eventually. esp has no server-specific bypasses. Use it on your own worlds and servers that allow it.</p>
+    </details>
+    <details>
+      <summary>Does it touch my Microsoft account?</summary>
+      <p>No. The launcher never asks you to log in. Signing in happens in the official Minecraft Launcher like always.</p>
+    </details>
+    <details>
+      <summary>Why is it downloading 100 MB the first time?</summary>
+      <p>That's Chromium for the web menu. It downloads once into <code>.esp/esp/mcef</code>. You can play while it downloads, and the native menu fills in until it's done.</p>
+    </details>
+    <details>
+      <summary>Mac or Linux?</summary>
+      <p>The launcher is Windows only for now. The jar works anywhere Fabric does: install Fabric for 1.21.11, then drop esp and Fabric API into your mods folder.</p>
+    </details>
+    <details>
+      <summary>Where are my settings?</summary>
+      <p><code>.esp/esp/configs/*.json</code>. In chat, <code>.config save name</code> and <code>.config load name</code> switch between them.</p>
+    </details>
+    <details>
+      <summary>Chat commands?</summary>
+      <p><code>.help</code> lists them all. The ones you'll use most are <code>.t</code>, <code>.bind</code>, <code>.set</code> and <code>.friend</code>.</p>
+    </details>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <span class="logo small">esp</span>
+  <p>Not affiliated with Mojang or Microsoft. "Minecraft" is their trademark.</p>
+  <p>Fonts: Fredoka, Rubik and JetBrains Mono, all under the SIL Open Font License.</p>
+</footer>
+
+</body>
+</html>
